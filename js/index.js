@@ -12,7 +12,9 @@ function donateTk(inputValue, totalAmount, tk, title) {
         return Number(tk)
     }
     else if (Number(totalAmount) < Number(inputValue.value)) {
-        return alert(`Your balance is ${totalAmount}. You can't pay more than that.`)
+        inputValue.value = ''
+        alert(`Your balance is ${totalAmount}. You can't pay more than that.`)
+        return Number(tk)
     }
     else {
         totalTk.innerText = Number(totalAmount) - Number(inputValue.value)
